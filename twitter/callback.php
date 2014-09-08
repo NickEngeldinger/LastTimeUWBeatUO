@@ -32,7 +32,7 @@ unset($_SESSION['oauth_token_secret']);
 
 if (200 == $connection->http_code) {
 	$_SESSION['status'] = 'verified';
-	header('Location: ./../thanks.html');
+	header('Location: ./../thanks.php');
 } else {
 	header('Location: ./clearsessions.php');
 }

@@ -38,3 +38,10 @@ $('.sendTweet').on('click',function(event) {
 		url = ('twitter/redirect.php?age=' + age);
 	window.location.href = url;
 });
+
+//POST FACEBOOK STATUS OF USERS AGE
+$('.facebook').on('click', function(event){
+	event.preventDefault();
+	var age = ('.youWere span').html();
+
+});
