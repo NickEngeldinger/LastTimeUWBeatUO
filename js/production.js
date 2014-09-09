@@ -55,3 +55,21 @@ $('.facebook').on('click', function(event){
 	var age = ('.youWere span').html();
 
 });
+
+//SHOW CREDITS
+$('.view_credits').on('click', function(event){
+	event.preventDefault();
+	$('#credits').fadeIn(1500);
+	$(this).hide();
+	$('.hide_credits').show();
+});
+
+//HIDE CREDITS
+$('.hide_credits').on('click', function(event){
+	event.preventDefault();
+	$('#credits').fadeOut(1500);
+	$('.view_credits').fadeIn(1500);
+	$(this).hide();
+})
+
+//ADD JSCROLLPANE FOR PRETTIER SCROLLBARS

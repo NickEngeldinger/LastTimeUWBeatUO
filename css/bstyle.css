@@ -99,6 +99,7 @@ footer a:active,
 	margin-bottom: 30px;
 }
 
+/*
 .open_modal,
 .age-calc,
 .sendTweet,
@@ -110,7 +111,9 @@ footer a:active,
 	background: #094c3a;
 	border: solid 2px #094e3a;
 }
+*/
 
+/*
 .open_modal:hover,
 .age-calc:hover,
 .sendTweet:hover,
@@ -123,6 +126,7 @@ footer a:active,
 	border: solid 2px #094e3a;
 	opacity: .9;
 }
+*/
 
 .sendTweet {
 	display: block;
@@ -144,11 +148,6 @@ footer a:active,
 }
 
 .reset {
-	text-align: center;
-}
-
-.view_credits {
-	line-height: 3em;
 	text-align: center;
 }
 

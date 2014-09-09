@@ -34,10 +34,10 @@
                             <div class="row">
                                 <form class="form-horizontal" role="form">
                                     <div class="form-group">
-                                        <label for="" class="col-sm-2 control-label">
+                                        <label for="" class="control-label">
                                             MONTH
                                         </label>
-                                        <div class="col-sm-10">
+                                        <div>
                                             <select name="" id="bDay" class="form-control">
                                                 <option value="1">January</option>
                                                 <option value="2">Febuary</option>
@@ -55,10 +55,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="bDay" class="col-sm-2 control-label">
+                                        <label for="bDay" class="control-label">
                                             DAY
                                         </label>
-                                        <div class="col-sm-10">
+                                        <div>
                                             <select name="" id="bMonth" class="form-control">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -95,10 +95,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="col-sm-2 control-label">
+                                        <label for="" class="control-label">
                                             YEAR
                                         </label>
-                                        <div class="col-sm-10">
+                                        <div>
                                             <select name="" id="bYear" class="form-control">
                                                 <option value="2014">2014</option>
                                                 <option value="2013">2013</option>
@@ -213,9 +213,40 @@
                                     <p class="shareResult reset">
                                         <a class="shareResult tryAgain" href="">TRY AGAIN</a>
                                         <br />
-                                        <a class="view_credits" href="">CREDITS</a>
+                                        <a class="view_credits" href="#">CREDITS</a>
+
                                     </p>
                                 </form>
+                                <section id="credits">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-10 col-lg-offset-1 text-center">
+                                                <a class="hide_credits" href="#">HIDE CREDITS</a>
+                                                <hr class="small">
+                                                <p>
+                                                    INSPIRED BY
+                                                    <a href="https://twitter.com/LstTimeUWBeatUO" target="_blank">
+                                                        &#64;LSTTIMEUWBEATUO
+                                                    </a>
+                                                </p>
+                                                <p>
+                                                    PRODUCED BY 
+                                                    <a href="https://twitter.com/pdx">
+                                                        &#64;PDXDBO
+                                                    </a>
+                                                </p>
+                                                <p>
+                                                    <i class="fa fa-envelope-o fa-fw"></i>  
+                                                    <a href="mailto:name@example.com">
+                                                        PDXDBO@GMAIL.COM
+                                                    </a>
+                                                </p>
+                                                <hr class="small">
+                                                <p class="text-muted">COPYRIGHT &copy; LASTTIMEUWBEATUO.COM 2014</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                         <!-- /.container -->
