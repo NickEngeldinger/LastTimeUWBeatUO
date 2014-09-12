@@ -42,8 +42,9 @@ $('.sendTweet').on('click',function(event) {
 //POST FACEBOOK STATUS OF USERS AGE
 $('.facebook').on('click', function(event){
 	event.preventDefault();
-	var age = ('.youWere span').html();
-
+	var age = $('.youWere span').html(),
+		url = ('facebook/fb_login.php');
+	window.location.href = url;
 });
 
 //SHOW CREDITS
