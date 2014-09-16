@@ -31,6 +31,7 @@
 green = #094c3a
 ltgreen = #094e3a
 yellow = #fff200
+grey = #f4f4f4
 
 /* MIXONS */
 linkhover()
@@ -66,6 +67,9 @@ appBtn()
 	padding-bottom 15px
 	width 240px
 
+.modal-content
+	background url(../img/jersey.jpg)
+
 /* GENERIC PAGE ELEMENT STYLES */
 h1 {
 	font-family: 'college_bold';
@@ -78,12 +82,19 @@ body {
 
 
 /* SPECIFIC PAGE ELEMENT STYLES */
+.age-calc 
+	display block
+	margin 0 auto
+	margin-top 45px
+	margin-bottom 24px
+	width 100px
+
+
 .shareResult
 	margin-top 10px
 
 .view_credits
 	line-height 3.75em
-
 
 #credits
 	display none
@@ -102,3 +113,7 @@ body {
 @media screen and (min-width: 768px)
 	.form-group
 		width 300px
+
+/* Need to import current working styles for medium and large widths, then setup main style for small screens
+
+/* Also, can (or should) I supress the scroll bar on the mobile page expansion for the credits section (and possibly others)
