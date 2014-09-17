@@ -26,13 +26,13 @@
                         <span aria-hidden="true">&times;</span>
                         <span class="sr-only">Close</span>
                     </button>
-                    <h4 class="modal-title">ENTER YOUR BIRTHDAY</h4>
                 </div>
                 <div class="modal-body">
                     <div class="content-section-a">
                         <div class="container">
                             <div class="row">
                                 <form class="form-horizontal" role="form">
+                                    <h4>ENTER YOUR BIRTHDAY</h4>
                                     <div class="form-group">
                                         <label for="" class="control-label">
                                             MONTH
@@ -191,7 +191,8 @@
                                     <button class="btn btn-lg btn-primary age-calc">
                                         COMPUTE!
                                     </button>
-                                    <h3 class="notBorn text-center">YOU WEREN'T EVEN BORN<br>LAST TIME UW BEAT UO!</h3>
+                                </form>
+                                <h3 class="notBorn text-center">YOU WEREN'T EVEN BORN<br>LAST TIME UW BEAT UO!</h3>
                                     <h3 class="youWere text-center">
                                         YOU WERE <span></span>
                                         LAST TIME UW BEAT UO!
@@ -216,7 +217,6 @@
                                         <a class="view_credits" href="#">CREDITS</a>
 
                                     </p>
-                                </form>
                                 <section id="credits">
                                     <div class="container">
                                         <div class="row">

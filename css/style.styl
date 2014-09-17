@@ -8,16 +8,6 @@
 	     url('../fonts/college_bold/college_bold.svg#webfont') format('svg');
 }
 
-/* IM NOT EVEN USING THE CONDENSED AM I?????? ?*/
-@font-face{ 
-	font-family: 'college_condensed';
-	src: url('../fonts/college_condensed/college_condensed.eot');
-	src: url('../fonts/college_condensed/college_condensed.eot?iefix') format('eot'),
-	     url('../fonts/college_condensed/college_condensed.woff') format('woff'),
-	     url('../fonts/college_condensed/college_condensed.ttf') format('truetype'),
-	     url('../fonts/college_condensed/college_condensed.svg#webfont') format('svg');
-}
-
 @font-face{ 
 	font-family: 'college_semi-condensed';
 	src: url('../fonts/college_semi-condensed/college_semi-condensed.eot');
@@ -32,16 +22,28 @@ green = #094c3a
 ltgreen = #094e3a
 yellow = #fff200
 grey = #f4f4f4
+offWhite = #efefef
 
-/* MIXONS */
-linkhover()
+/* MIXINS */
+linkHover()
 	opacity 0.7
 
 appBtn()
 	background green
 	border solid 2px ltgreen
 
+/* HELPER CLASSES */
+.off_page 
+	display block
+	height 1px
+	text-indent -9999px
+	white-space nowrap
+	overflow hidden
+
 /* OVERRIDES */
+.content-section-a .container
+	width 100%
+
 .form-control
 	width 110px
 
@@ -63,14 +65,24 @@ appBtn()
 	width 110px
 
 .form-group
-	margin 0 auto !important /* I know I hate that shit too */
+	margin 0 auto !important /* I know... I hate this too */
 	padding-bottom 15px
 	width 240px
 
 .modal-content
 	background url(../img/jersey.jpg)
 
-/* GENERIC PAGE ELEMENT STYLES */
+.modal-header 
+	border-bottom none
+
+.modal-body
+	min-height 278px
+	padding 20px 50px 50px 50px
+
+	.btn i
+		color yellow
+
+/* GENERIC ELEMENT STYLES */
 h1 {
 	font-family: 'college_bold';
 	word-spacing: -.15em;
@@ -80,13 +92,24 @@ body {
 	font-family: 'college_semi-condensed';
 }
 
+form h4
+	margin-bottom 40px 
+	text-align center
 
-/* SPECIFIC PAGE ELEMENT STYLES */
+/* SPECIFIC ELEMENT STYLES */
+.header h3,
+.header h4 
+	color offWhite
+	font-family 'college_condensed'
+
+.open_modal 
+	margin-top 30px
+	margin-bottom 30px
+
 .age-calc 
 	display block
 	margin 0 auto
-	margin-top 45px
-	margin-bottom 24px
+	margin-top 25px
 	width 100px
 
 
@@ -102,7 +125,7 @@ body {
 	a
 		color green
 		&:hover
-			linkhover()
+			linkHover()
 			text-decoration none
 
 	.hide_credits

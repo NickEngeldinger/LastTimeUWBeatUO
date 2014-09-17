@@ -1,68 +1,8 @@
-h1 {
-	font-family: 'college_bold';
-	word-spacing: -.15em;
-}
-
-body {
-	font-family: 'college_semi-condensed';
-}
-
-.header h3,
-.header h4 {
-	color: #efefef;
-	font-family: 'college_condensed';
-}
-
-.content-section-a .container {
-	width: 100%
-}
-
-footer a,
-.reset a {
-	color: #094c3a;
-}
-
-footer a:hover,
-.reset a:hover {
-	color: #094c3a;
-	opacity: 0.7;
-	text-decoration: none;
-}
-
-footer a:active,
-.reset a:active {
-	color: #094c3a;
-	text-shadow: 3px 3px 3px #fff200;
-	text-shadow: 3px -3px 3px #fff200;
-	text-shadow: -3px 3px 3px #fff200;
-	text-shadow: -3px -3px 3px #fff200;
-	text-decoration: none;
-}
-
 .notBorn,
 .youWere,
 .shareResult {
 	display: none;
 }
-
-.modal-header {
-	border-bottom: none;
-}
-
-.modal-header h4 {
-	margin-top: 25px;
-	text-align: center;
-}
-
-.modal-body {
-	padding: 20px 50px 50px 50px;
-}
-
-.modal-body .btn i {
-	color: #fff200;
-}
-
-
 
 .shareResult {
 	margin: 0;
@@ -81,46 +21,20 @@ footer a:active,
 	width: 65px;
 }
 
-.off_page {
-	display: block;
-	height: 1px;
-	text-indent: -9999px;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.open_modal {
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
 /*
-.open_modal,
-.age-calc,
-.sendTweet,
-.facebook,
-.open_modal:focus,
-.age-calc:focus,
-.sendTweet:focus,
-.facebook:focus {
-	background: #094c3a;
-	border: solid 2px #094e3a;
-}
-*/
 
-/*
-.open_modal:hover,
-.age-calc:hover,
-.sendTweet:hover,
-.facebook:hover,
-.open_modal:active,
-.age-calc:active,
-.sendTweet:active,
-.facebook:active {
-	background: #094e3a;
-	border: solid 2px #094e3a;
-	opacity: .9;
-}
+btnFormat(marTop,marBtm,wdth)
+	display block
+	margin 0 auto
+	margin-top marTop
+	margin-bottom marBtm,
+	width wdth
+
+.sendTweet
+	btnFormat(30px,inherit,200px)
+
+.facebook
+	btnFormat(15px,30px,175px)
 */
 
 .sendTweet {
