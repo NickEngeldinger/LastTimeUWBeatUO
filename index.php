@@ -222,8 +222,7 @@
                                         <div class="row">
                                             <div class="col-lg-10 col-lg-offset-1 text-center">
                                                 <a class="hide_credits" href="#">HIDE CREDITS</a>
-                                                <hr class="small">
-                                                <p>
+                                                <p class="credits_list">
                                                     INSPIRED BY
                                                     <a href="https://twitter.com/LstTimeUWBeatUO" target="_blank">
                                                         &#64;LSTTIMEUWBEATUO

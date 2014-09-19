@@ -1,48 +1,30 @@
 //ANIMATE CREDITS SHOW/HIDE
-function creditsOpen() {
-	$('.view_credits').hide();
-	$('#credits').show();
-	/*var winWidth    = $(window).width(),
-		mBody       = $('.modal-body'),
-		currHeight  = mBody.height(),
-		creditsLink = $('.view_credits');
+function credits(action) {
+	var modal    = $('.modal-body'),
+		credits  = $('#credits'),
+		vCredits = $('.view_credits');
 
-	function openFades(){
-		creditsLink.fadeOut(200, function(){
-				$('.hide_credits').fadeIn(500);
-				$('#credits').fadeIn(500);	
+	switch (action) {
+		
+		case open:
+			vCredits.fadeOut(500);
+			modal.animate({
+				height: '630'
+			}, 500, function(){
+				credits.fadeIn(500);
 			});
-	}
+			break;
 
-	if(winWidth > 384){
-		var setHeight  = currHeight + 70;
-		mBody.css('height', setHeight);
-		mBody.animate({
-			height: '550'
-		}, 500, function(){
-			openFades();
-		});
+		case close:
+			credits.fadeOut(500, function(){
+				modal.animate({
+					height: '399'
+				}, 500, function(){
+					vCredits.fadeIn(350);
+				});
+			});
+			break;
 	}
-	else {
-		var setHeight  = currHeight + 70;
-		mBody.css('height', setHeight);
-		creditsLink.css('margin-bottom','0')
-		mBody.animate({
-			height: '600'
-		}, 500, function(){
-			openFades();
-		});
-	}*/
-}
-
-function creditsClose() {
-	/*$('#credits').fadeOut(500, function(){
-		$('.modal-body').animate({
-			height: '400'
-		},500, function(){
-			$('.view_credits').fadeIn(350);
-		});
-	});*/
 }
 
 //CALCULATE A VISTORS AGE ON THE CALCULATOR PAGE AND DISPLAY IT
@@ -109,12 +91,12 @@ $('.age-calc').on('click',function(event) {
 
 $('.view_credits').on('click', function(event){
 	event.preventDefault();
-	creditsOpen();
+	credits(open);
 });
 
 $('.hide_credits').on('click', function(event){
 	event.preventDefault();
-	creditsClose();	
+	credits(close);	
 });
 
 $('.sendTweet').on('click',function(event) {
