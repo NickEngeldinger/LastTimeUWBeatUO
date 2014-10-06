@@ -90,7 +90,7 @@ function connectTwitter(){
 
 function connectFacebook(){
 	var age = $('.youWere span').html(),
-		url = ('facebook/fb_login.php');
+		url = ('facebook/redirect.php');
 	window.location.href = url;
 }
 
