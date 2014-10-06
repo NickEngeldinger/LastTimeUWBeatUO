@@ -1,44 +1,53 @@
 /* FONTS */
-@font-face{ 
-	font-family: 'college_bold';
-	src: url('../fonts/college_bold/college_bold.eot');
-	src: url('../fonts/college_bold/college_bold.eot?iefix') format('eot'),
+@font-face 
+	font-family 'college_bold'
+	src url('../fonts/college_bold/college_bold.eot')
+	src url('../fonts/college_bold/college_bold.eot?iefix') format('eot'),
 	     url('../fonts/college_bold/college_bold.woff') format('woff'),
 	     url('../fonts/college_bold/college_bold.ttf') format('truetype'),
-	     url('../fonts/college_bold/college_bold.svg#webfont') format('svg');
-}
+	     url('../fonts/college_bold/college_bold.svg#webfont') format('svg')
 
-@font-face{ 
-	font-family: 'college_semi-condensed';
-	src: url('../fonts/college_semi-condensed/college_semi-condensed.eot');
-	src: url('../fonts/college_semi-condensed/college_semi-condensed.eot?iefix') format('eot'),
+@font-face 
+	font-family 'college_semi-condensed'
+	src url('../fonts/college_semi-condensed/college_semi-condensed.eot')
+	src url('../fonts/college_semi-condensed/college_semi-condensed.eot?iefix') format('eot'),
 	     url('../fonts/college_semi-condensed/college_semi-condensed.woff') format('woff'),
 	     url('../fonts/college_semi-condensed/college_semi-condensed.ttf') format('truetype'),
-	     url('../fonts/college_semi-condensed/college_semi-condensed.svg#webfont') format('svg');
-}
+	     url('../fonts/college_semi-condensed/college_semi-condensed.svg#webfont') format('svg')
 
 /* VARIABLES */
 green = #094c3a
-ltgreen = #094e3a
-yellow = #fff200
 grey = #f4f4f4
+ltgreen = #094e3a
 offWhite = #efefef
+yellow = #fff200
 
 /* MIXINS */
 linkHover()
+	color green
 	opacity 0.7
+	text-decoration none
 
 appBtn()
 	background green
 	border solid 2px ltgreen
 
+btnCenter(val1, val2)
+	display block
+	margin 0 auto
+	margin-top val1
+	width val2
+
 /* HELPER CLASSES */
 .off_page 
 	display block
 	height 1px
+	overflow hidden
 	text-indent -9999px
 	white-space nowrap
-	overflow hidden
+
+.reset
+	text-align center
 
 /* OVERRIDES */
 .content-section-a .container
@@ -49,10 +58,9 @@ appBtn()
 
 .btn,
 .btn:focus,
-.btn:active:focus {
+.btn:active:focus
 	appBtn()
 	outline none
-}
 
 .btn:hover,
 .btn:active
@@ -82,6 +90,13 @@ appBtn()
 	.btn i
 		color yellow
 
+/* HIDE MODAL CONTENTS */
+.notBorn,
+.youWere,
+.shareResult,
+#credits
+	display none 
+
 /* GENERIC ELEMENT STYLES */
 body 
 	font-family 'college_semi-condensed'
@@ -94,49 +109,55 @@ form h4
 	margin-bottom 40px 
 	text-align center
 
+a
+	color green
+	&:hover
+		linkHover()
+
 /* SPECIFIC ELEMENT STYLES */
 .header h3,
 .header h4 
 	color offWhite
-	/*font-family 'college_condensed'*/
+
+.o
+	margin-top 20px
+	width 70%
+	max-width 500px
+
+.dub
+	width 65px
 
 .open_modal 
 	margin-top 30px
 	margin-bottom 30px
 
 .age-calc 
-	display block
-	margin 0 auto
-	margin-top 25px
-	width 100px
+	btnCenter(25px, 100px)
 
+.youWere span
+	font-size 2em
 
 .shareResult
+	list-style-type none
+	margin 0
 	margin-top 10px
+	padding 0
 
-.view_credits
+.sendTweet
+	btnCenter(30px, 200px)
+
+.facebook
+	btnCenter(15px, 175px)
+	margin-bottom 30px
+
+.view_credits,
+.hide_credits
 	line-height 3.75em
 
-#credits
-	display none
-
-	a
-		color green
-		&:hover
-			linkHover()
-			text-decoration none
-
-	.hide_credits
-		line-height 3.75em
-
-	.credits_list
-		margin-top 20px
+.credits_list
+	margin-top 20px
 
 /*  MEDIA QUERIES */
 @media screen and (min-width: 768px)
 	.form-group
 		width 300px
-
-/* Need to import current working styles for medium and large widths, then setup main style for small screens
-
-/* Also, can (or should) I supress the scroll bar on the mobile page expansion for the credits section (and possibly others)

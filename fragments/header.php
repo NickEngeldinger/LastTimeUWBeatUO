@@ -12,10 +12,11 @@
     <title>Last Time UW Beat UO</title>
 
     <link href="css/production.min.css" rel="stylesheet">
-    <link href="css/bstyle.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
+    <!-- Icons -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Custom Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
