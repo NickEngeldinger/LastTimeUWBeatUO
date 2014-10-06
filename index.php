@@ -247,10 +247,8 @@
                                     </div>
                                 </section>
                             </div>
-                        </div>
-                        <!-- /.container -->
-                    </div>
-                    <!-- /.content-section-a -->
+                        </div><!-- /.container -->
+                    </div><!-- /.content-section-a -->
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
