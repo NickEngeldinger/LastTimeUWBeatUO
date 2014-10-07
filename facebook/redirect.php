@@ -14,16 +14,18 @@ ALSO THE TOKEN WILL EXPIRE AFTER 60MIN AND NEEDS TO BE RE-GENERATED*/
 $page_access_token = 'CAACEdEose0cBACNdqFrFayBN1zVTYlodKaSsmQ3bcplKqcGXON1ZCibz2fTGXT9GK0Y47UvB7pNJy6Nc9Jq6cp4SrwkSZAqryhIox86HEZBjZBZAJTHtXIzyFzsn6kwDSbXiRswyxsLD0fZCtxQCSPToiwLIIusJyFSsX9r46HZAt22EG2qZCDT1QnZBHMDMNSZApZB2UBj0eEnuK7D1pjNVz80';
 $page_id = '1475915989342199';
 
+##CREATE ARRAY FOR ALL THE PARTS OF THE FB POST
 $data['picture'] = "http://i.imgur.com/l4ZXhsf.jpg"; /*replace with my hosted version when live */
 $data['link'] = "local.LastTimeUWbeatUO.com";
 $data['message'] = $msg;
 $data['caption'] = "www.LastTimeUWBeatUO.com";
 $data['description'] = "The Oregon Ducks football team hasn't lost to the Washington Huskies since November 16th, 2002. Calculate how old you were last time UW beat UO and share with your friends!";
-
 $data['access_token'] = $page_access_token;
 
+##URL WE ARE SENDING THE ARRAY TO
 $post_url = 'https://graph.facebook.com/'.$page_id.'/feed';
 
+##CURL SENDS THE HTTP REQUEST TO THAT URL INCLUDING OUR DATA
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $post_url);
 curl_setopt($ch, CURLOPT_POST, 1);
