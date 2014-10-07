@@ -1,15 +1,17 @@
 <?php
 
-$age = isset($_GET['age']) ? $_GET['age']: null;
+$age = isset($_GET['age']) ? $_GET['age'] : null;
 
-if(age == null)
-	$msg = "You weren't even born the last time UW beat UO!"
-else
-	$msg = "You were ".$age." last time UW beat UO! #GoDucks"
+if($age == null) {
+	$msg = "I wasn't even born the last time UW beat UO!";
+}
+else {
+	$msg = "I was ".$age." last time UW beat UO!";
+}
 
 /*THESE ARE HARDCODED TO POST TO MY DEV ACCOUNT PAGE ONLY, NEED TO CAPTURE FROM AUTH FLOW 
 ALSO THE TOKEN WILL EXPIRE AFTER 60MIN AND NEEDS TO BE RE-GENERATED*/
-$page_access_token = 'CAACEdEose0cBAG0ZCUY1X5NZA2QboGUkPI2oILIHz40A39Ey2LGqSO2EexWcZABSrIkciN5saBMZC7780ZAL2xhTZAB64ARtefyFnaZBCRWZAanVCly9R9rtqBq4t0ZCbxC0MlWBGppB3S06x20g0CGlA7FL7szz30nwF0A9ZBl9wI4SsgsQfq0CfCXlZCE0AwkU7aIfGKFfDbd6kWzjuQ7ZC1ku';
+$page_access_token = 'CAACEdEose0cBACNdqFrFayBN1zVTYlodKaSsmQ3bcplKqcGXON1ZCibz2fTGXT9GK0Y47UvB7pNJy6Nc9Jq6cp4SrwkSZAqryhIox86HEZBjZBZAJTHtXIzyFzsn6kwDSbXiRswyxsLD0fZCtxQCSPToiwLIIusJyFSsX9r46HZAt22EG2qZCDT1QnZBHMDMNSZApZB2UBj0eEnuK7D1pjNVz80';
 $page_id = '1475915989342199';
 
 $data['picture'] = "http://i.imgur.com/l4ZXhsf.jpg"; /*replace with my hosted version when live */
@@ -31,5 +33,6 @@ $return = curl_exec($ch);
 curl_close($ch);
 
 /* NEED TO CHECK IF POSTING WAS SUCCESSFUL THEN REDIRECT TO THANKS PAGE, OTHERWISE PRINT ERROR MESSAGE */
+header('Location: ./../thanks.php');
 
 ?>
