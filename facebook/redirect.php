@@ -23,7 +23,7 @@ $data['description'] = "The Oregon Ducks football team hasn't lost to the Washin
 $data['access_token'] = $page_access_token;
 
 ##URL WE ARE SENDING THE ARRAY TO
-$post_url = 'https://graph.facebook.com/'.$page_id.'/feed';
+$post_url = 'https://grah.facebook.com/'.$page_id.'/feed';
 
 ##CURL SENDS THE HTTP REQUEST TO THAT URL INCLUDING OUR DATA
 $ch = curl_init();
@@ -32,9 +32,18 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $return = curl_exec($ch);
+
+if(curl_errno($ch)) {
+	#PASS ERROR THRU TO ERROR PAGE AND DISPLAY, APOLOGIZE, LINK BACK TO HOME
+	echo 'Error: '.curl_error($ch);
+	header('Location: ./../error.php?error='.curl_error($ch));
+}
+else {
+	echo 'Connection all good!';
+}
+
 curl_close($ch);
 
 /* NEED TO CHECK IF POSTING WAS SUCCESSFUL THEN REDIRECT TO THANKS PAGE, OTHERWISE PRINT ERROR MESSAGE */
-header('Location: ./../thanks.php');
-
+#header('Location: ./../thanks.php');
 ?>

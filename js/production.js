@@ -82,15 +82,9 @@ function calculateAge(){
 	});
 }
 
-function connectTwitter(){
+function connect(platform){
 	var age = $('.youWere span').html(),
-		url = ('twitter/redirect.php?age=' + age);
-	window.location.href = url;
-}
-
-function connectFacebook(){
-	var age = $('.youWere span').html(),
-		url = ('facebook/redirect.php?age=' + age);
+		url = (platform + '/redirect.php?age=' + age);
 	window.location.href = url;
 }
 
@@ -111,11 +105,10 @@ $('.hide_credits').on('click', function(event){
 
 $('.sendTweet').on('click',function(event) {
 	event.preventDefault();
-	connectTwitter();
+	connect('twitter');
 });
 
 $('.facebook').on('click', function(event){
 	event.preventDefault();
-	connectFacebook();
+	connect('facebook');
 });
-

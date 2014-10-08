@@ -95,11 +95,10 @@ $('.hide_credits').on('click', function(event){
 
 $('.sendTweet').on('click',function(event) {
 	event.preventDefault();
-	connect(twitter);
+	connect('twitter');
 });
 
 $('.facebook').on('click', function(event){
 	event.preventDefault();
-	connect(facebook);
+	connect('facebook');
 });
-
