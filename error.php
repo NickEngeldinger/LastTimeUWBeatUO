@@ -7,9 +7,9 @@
             <h1>Sorry</h1>
             <h3>
             	<?php
-            		$query = $_GET['error'];
+            		$query = $_SESSION['error_msg']; 
     				echo $query;
-            		#NOT A FAN OF THIS INLINE PHP
+            		#NOT A FAN OF THIS INLINE PHP CONVERT TO JS
             	?>
             </h3>
             <a class="btn" href="local.lasttimeuwbeatuo.com">Try Again</a>

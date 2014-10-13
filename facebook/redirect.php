@@ -1,49 +1,49 @@
 <?php
 
+session_start();
+require_once('facebook.php');
+require_once('config.php');
+
 $age = isset($_GET['age']) ? $_GET['age'] : null;
+$_SESSION['age'] = $age;
+//WHY ISNT MY AGE SESSION VAR SHOWING UP IN DEV TOOLS?
 
-if($age == null) {
-	$msg = "I wasn't even born the last time UW beat UO!";
+// Create our Application instance.
+$facebook = new Facebook(array(
+  'appId'  => APP_ID,
+  'secret' => APP_SECRET,
+  'cookie' => true
+));
+if ($user = $facebook->getUser()) { //user is logged in and authorized us
+    $user = $facebook->getUser();
+    $fbme = $facebook->api('/me');
+    //print "Welcome User ID: " . $user;
+    //print_r($fbme);
+
+    $success_code = $_GET['code'];
+    //print "HERES YA CODE ".$success_code;
+    //HERE IS WHERE WE WANT TO ADD THE REQUEST FOR EXTENDED PERMISSIONS (ABILITY TO PUBLISH STATUS)
+    //IT SHOULD SEND US TO THE CALLBACK.PHP URL WITH THE ACCESS_TOKEN WHICH WE PLUG INTO OUR FB OBJECT 
+    //IN ORDER TO AUTHORIZE OUR POST
+
+    $post_url = 'https://graph.facebook.com/oauth/access_token?'.
+                'client_id='.APP_ID.'&redirect_uri='.CALLBACK_URL.
+                '&client_secret='.APP_SECRET.'&code='.$success_code;
+
+    print "<script type='text/javascript'>top.location.href = '$post_url';</script>";
+
+
+
+} else { // User has not authorized us or is not logged in
+    $params = array(
+        'fbconnect'=>0,
+        'canvas'=>1,
+        'req_perms'=>'publish_stream,email',
+        'redirect_uri'=>'http://local.lasttimeuwbeatuo.com/facebook/redirect.php/'
+    // For a full list of permissions: http://developers.facebook.com/docs/authentication/permissions
+    );
+    $loginUrl = $facebook->getLoginUrl($params);
+    print "<script type='text/javascript'>top.location.href = '$loginUrl';</script>";
 }
-else {
-	$msg = "I was ".$age." last time UW beat UO!";
-}
 
-/*THESE ARE HARDCODED TO POST TO MY DEV ACCOUNT PAGE ONLY, NEED TO CAPTURE FROM AUTH FLOW 
-ALSO THE TOKEN WILL EXPIRE AFTER 60MIN AND NEEDS TO BE RE-GENERATED*/
-$page_access_token = 'CAACEdEose0cBACNdqFrFayBN1zVTYlodKaSsmQ3bcplKqcGXON1ZCibz2fTGXT9GK0Y47UvB7pNJy6Nc9Jq6cp4SrwkSZAqryhIox86HEZBjZBZAJTHtXIzyFzsn6kwDSbXiRswyxsLD0fZCtxQCSPToiwLIIusJyFSsX9r46HZAt22EG2qZCDT1QnZBHMDMNSZApZB2UBj0eEnuK7D1pjNVz80';
-$page_id = '1475915989342199';
-
-##CREATE ARRAY FOR ALL THE PARTS OF THE FB POST
-$data['picture'] = "http://i.imgur.com/l4ZXhsf.jpg"; /*replace with my hosted version when live */
-$data['link'] = "local.LastTimeUWbeatUO.com";
-$data['message'] = $msg;
-$data['caption'] = "www.LastTimeUWBeatUO.com";
-$data['description'] = "The Oregon Ducks football team hasn't lost to the Washington Huskies since November 16th, 2002. Calculate how old you were last time UW beat UO and share with your friends!";
-$data['access_token'] = $page_access_token;
-
-##URL WE ARE SENDING THE ARRAY TO
-$post_url = 'https://grah.facebook.com/'.$page_id.'/feed';
-
-##CURL SENDS THE HTTP REQUEST TO THAT URL INCLUDING OUR DATA
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $post_url);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$return = curl_exec($ch);
-
-if(curl_errno($ch)) {
-	#PASS ERROR THRU TO ERROR PAGE AND DISPLAY, APOLOGIZE, LINK BACK TO HOME
-	echo 'Error: '.curl_error($ch);
-	header('Location: ./../error.php?error='.curl_error($ch));
-}
-else {
-	echo 'Connection all good!';
-}
-
-curl_close($ch);
-
-/* NEED TO CHECK IF POSTING WAS SUCCESSFUL THEN REDIRECT TO THANKS PAGE, OTHERWISE PRINT ERROR MESSAGE */
-#header('Location: ./../thanks.php');
 ?>
