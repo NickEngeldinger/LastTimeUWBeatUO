@@ -230,14 +230,14 @@
                                                 </p>
                                                 <p>
                                                     PRODUCED BY 
-                                                    <a href="https://twitter.com/pdx">
+                                                    <a href="https://twitter.com/pdxdbo">
                                                         &#64;PDXDBO
                                                     </a>
                                                 </p>
                                                 <p>
                                                     <i class="fa fa-envelope-o fa-fw"></i>  
-                                                    <a href="mailto:name@example.com">
-                                                        PDXDBO@GMAIL.COM
+                                                    <a href="mailto:p.dxdbo@gmail.com">
+                                                        EMAIL ME
                                                     </a>
                                                 </p>
                                                 <hr class="small">
