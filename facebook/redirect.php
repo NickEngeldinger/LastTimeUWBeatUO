@@ -30,9 +30,9 @@ if ($user = $facebook->getUser()) { //user is logged in and authorized us
                 'client_id='.APP_ID.'&redirect_uri='.CALLBACK_URL.
                 '&client_secret='.APP_SECRET.'&code='.$success_code;
 
+    //print $post_url;
     print "<script type='text/javascript'>top.location.href = '$post_url';</script>";
-
-
+    //header('Location: '.$post_url);
 
 } else { // User has not authorized us or is not logged in
     $params = array(
@@ -43,7 +43,6 @@ if ($user = $facebook->getUser()) { //user is logged in and authorized us
     // For a full list of permissions: http://developers.facebook.com/docs/authentication/permissions
     );
     $loginUrl = $facebook->getLoginUrl($params);
-    print "<script type='text/javascript'>top.location.href = '$loginUrl';</script>";
-}
+}   header('Location: '.$loginUrl);
 
 ?>
