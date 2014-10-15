@@ -9,8 +9,12 @@
                 <?php
                     echo $trivia;
                 ?>
+                Buffy The Vampire Slayer, Sabrina the Teenage Witch and Dawson's Creek were still on the air
             </h2>
-            <button class="btn btn-primary btn-lg share" data-toggle="modal" data-target="#myModal">FIND OUT NOW!</button>
+            <button class="btn btn-primary btn-lg share">
+                <i class="fa fa-twitter"></i>
+                &nbsp;Share this!
+            </button>
         </div>
     </header>
     

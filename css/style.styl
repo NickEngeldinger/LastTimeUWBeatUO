@@ -23,17 +23,36 @@ offWhite = #efefef
 yellow = #fff200
 
 /* MIXINS */
-linkHover()
-	color green
-	opacity 0.7
-	text-decoration none
+	
+body
+	font-family 'college_semi-condensed'
+	text-transform uppercase
 
-appBtn()
+h1
+	color offWhite
+	font-family 'college_bold'
+	font-weight normal
+
+h2
+	color offWhite
+	font-size 1.5em
+	font-weight normal
+	margin .5em 2em 1em 2em
+
+	@media screen and (min-width:768px)
+		font-size 2.5em
+.btn
 	background green
 	border solid 2px ltgreen
 
-btnCenter(val1, val2)
-	display block
-	margin 0 auto
-	margin-top val1
-	width val2
+	&:hover
+		background green
+		opacity 0.8
+		border solid 2px ltgreen
+
+	i
+		color yellow
+
+	&:focus
+		outline none
+		border solid 2px ltgreen
