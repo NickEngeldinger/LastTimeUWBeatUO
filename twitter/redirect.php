@@ -4,7 +4,7 @@ session_start();
 require_once('twitteroauth.php');
 require_once('config.php');
 
-$_SESSION['age'] = $_GET['age'];
+$_SESSION['msg'] = $_GET['msg'];
 
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
 
