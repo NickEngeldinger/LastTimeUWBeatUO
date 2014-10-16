@@ -19,5 +19,6 @@ switch ($connection->http_code) {
 		header('Location: ' . $url);
 		break;
 	default:
-		echo 'Could not connect to Twitter. <br />Please refresh the page or try again later. ' . $connection->http_code;
+		$_SESSION['error'] = $connection->http_code;
+		header('Location: ./../error.php');
 }

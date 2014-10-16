@@ -7,7 +7,7 @@
             <h1>Sorry</h1>
             <h3>
             	<?php
-            		$query = $_SESSION['error_msg']; 
+            		$query = $_SESSION['error']; 
     				echo $query;
             		#NOT A FAN OF THIS INLINE PHP CONVERT TO JS
             	?>
